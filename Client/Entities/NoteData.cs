@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Entities {
+namespace Core.Entities {
     public class NoteData {
 
         public NoteData() {
@@ -12,11 +12,10 @@ namespace Client.Entities {
         }
 
         #region Properties
-        public int ID { get; set; } = 0;
+        public string ID { get; set; } = "";
         public string Title { get; set; } = "";
         public string Body { get; set; } = "";
-        public DateTime ModifiedDate { get; set; }
-        public int CreateBy { get; set; }
+        public DateTime EditDate { get; set; }
         public DateTime CreateDate { get; set; }
         #endregion
 

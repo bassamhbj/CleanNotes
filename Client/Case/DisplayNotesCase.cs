@@ -4,26 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Case {
+namespace Core.Case {
     class DisplayNotesCase {
 
-        private Adapters.INoteListDisplay _listAdapter;
-        private Adapters.INoteDisplay _noteAdapter;
-        private readonly Adapters.INoteReader _readerAdapter;
+        public DisplayNotesCase() {
+            if (DependencyInjector.Dependency.NoteReader == null)
+                throw new ArgumentNullException("NoteReader dependency is NULL");
 
-        public DisplayNotesCase(Adapters.INoteReader readerAdapter) {
-            _readerAdapter = readerAdapter;
+            if (DependencyInjector.Dependency.NoteDisplay == null)
+                throw new ArgumentNullException("NoteDisplay dependecy is NULL");
         }
 
         #region Methods
-        public void DisplayList(Adapters.INoteListDisplay adapter) {
-            _listAdapter = adapter;
-            _listAdapter.DisplayList(_readerAdapter.GetAllNotes());
+        public void DisplayList() {
+            DependencyInjector.Dependency.NoteDisplay.DisplayList(DependencyInjector.Dependency.NoteReader.GetNoteList());
         }
 
-        public void DisplayNote(Adapters.INoteDisplay adapter, int id) {
-            _noteAdapter = adapter;
-            _noteAdapter.DisplayNote(_readerAdapter.GetNoteById(id));
+        public void DisplayNote(string id) {
+            DependencyInjector.Dependency.NoteDisplay.DisplayNote(DependencyInjector.Dependency.NoteReader.GetNoteById(id));
         }
         #endregion
     }

@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client {
-    public class DisplayFacade {
+namespace Core {
+    public class ActionFacade {
 
-        private Adapters.INoteReader _readerAdapter;
-
-        public DisplayFacade(Adapters.INoteReader readerAdapter) {
-            _readerAdapter = readerAdapter;
+        public ActionFacade() {
         }
 
-        public void DisplayNoteList(Adapters.INoteListDisplay adapter) {
-            var useCase = new Case.DisplayNotesCase(_readerAdapter);
-            useCase.DisplayList(adapter);
+        public void DisplayNoteList() {
+            var useCase = new Case.DisplayNotesCase();
+            useCase.DisplayList();
         }
 
-        public void DisplayNote(Adapters.INoteDisplay adapter, int id) {
-            var useCase = new Case.DisplayNotesCase(_readerAdapter);
-            useCase.DisplayNote(adapter, id);
+        public void DisplayNote(string id) {
+            var useCase = new Case.DisplayNotesCase();
+            useCase.DisplayNote(id);
+        }
+
+        public void CreateNote(string title, string body) {
+
         }
     }
 }

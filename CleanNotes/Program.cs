@@ -9,6 +9,9 @@ namespace CleanNotes {
         static void Main(string[] args) {
             Console.WriteLine("***** CLEAN NOTES *****");
 
+            var dependecy = new Dependency();
+            dependecy.AddDependencies();
+
             var view = new View.NoteListView();
             view.CreateView();
 

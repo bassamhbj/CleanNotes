@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Adapters {
+namespace Core.Adapters {
     public interface INoteDisplay {
         void DisplayNote(Entities.NoteData note);
+        void DisplayList(List<Entities.NoteData> noteList);
     }
 }

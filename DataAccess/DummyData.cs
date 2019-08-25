@@ -11,8 +11,8 @@ namespace DataAccess {
 
         }
 
-        public List<Client.Entities.NoteData> GetNoteList() {
-            var list = new List<Client.Entities.NoteData>();
+        public List<Core.Entities.NoteData> GetNoteList() {
+            var list = new List<Core.Entities.NoteData>();
 
             list.Add(CreateNote(1, "Title 1", "Body 1", DateTime.Now));
             list.Add(CreateNote(2, "Title 2", "Body 2", DateTime.Now));
@@ -23,15 +23,15 @@ namespace DataAccess {
             return list;
         }
 
-        public Client.Entities.NoteData GetNoteByID(int id) =>
+        public Core.Entities.NoteData GetNoteByID(int id) =>
             CreateNote(id, $"Title {id}", $"Body {id}", DateTime.Now);
 
-        private Client.Entities.NoteData CreateNote(int id, string title, string body, DateTime modifiedDate) {
-            var note = new Client.Entities.NoteData() {
-                ID = id,
+        private Core.Entities.NoteData CreateNote(int id, string title, string body, DateTime modifiedDate) {
+            var note = new Core.Entities.NoteData() {
+                ID = Guid.NewGuid().ToString(),
                 Title = title,
                 Body = body,
-                ModifiedDate = modifiedDate
+                EditDate = modifiedDate
             };
 
             return note;

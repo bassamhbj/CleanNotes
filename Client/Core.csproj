@@ -7,7 +7,7 @@
     <ProjectGuid>{A979CC8A-C70C-485B-AAC5-0B2E97423A0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Client</RootNamespace>
+    <RootNamespace>Core</RootNamespace>
     <AssemblyName>Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,12 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\INoteDisplay.cs" />
-    <Compile Include="Adapters\INoteListDisplay.cs" />
-    <Compile Include="Adapters\INoteReader.cs" />
+    <Compile Include="Adapters\NoteCreatorAbstract.cs" />
+    <Compile Include="Adapters\NoteDisplayAbstract.cs" />
+    <Compile Include="Adapters\NoteReaderAbstract.cs" />
+    <Compile Include="Case\CreateNotesCase.cs" />
     <Compile Include="Case\DisplayNotesCase.cs" />
+    <Compile Include="DependencyInjector.cs" />
     <Compile Include="DisplayFacade.cs" />
+    <Compile Include="Entities\Dependencies.cs" />
     <Compile Include="Entities\NoteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Tools.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
