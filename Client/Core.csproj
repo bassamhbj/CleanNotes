@@ -41,14 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\INoteDisplay.cs" />
-    <Compile Include="Adapters\NoteCreatorAbstract.cs" />
-    <Compile Include="Adapters\NoteDisplayAbstract.cs" />
-    <Compile Include="Adapters\NoteReaderAbstract.cs" />
-    <Compile Include="Case\CreateNotesCase.cs" />
-    <Compile Include="Case\DisplayNotesCase.cs" />
+    <Compile Include="Adapters\DataCreatorAbstract.cs" />
+    <Compile Include="Adapters\DataReaderAbstract.cs" />
+    <Compile Include="Case\CreateNotes.cs" />
+    <Compile Include="Case\DisplayNotes.cs" />
     <Compile Include="DependencyInjector.cs" />
-    <Compile Include="DisplayFacade.cs" />
+    <Compile Include="NoteDisplayer.cs" />
     <Compile Include="Entities\Dependencies.cs" />
     <Compile Include="Entities\NoteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

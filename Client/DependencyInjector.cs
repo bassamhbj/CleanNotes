@@ -13,13 +13,10 @@ namespace Core {
             Dependency = Dependency ?? new Entities.Dependencies();
         }
 
-        protected void InjectNoteDisplay(Adapters.INoteDisplay injection) =>
-            Dependency.NoteDisplay = injection;
+        protected void InjectDataReader(Adapters.DataReaderAbstract injection) =>
+            Dependency.DataReader = injection;
 
-        protected void InjectNoteReader(Adapters.NoteReaderAbstract injection) =>
-            Dependency.NoteReader = injection;
-
-        protected void InjectNoteCreator(Adapters.NoteCreatorAbstract injection) =>
-            Dependency.NoteCreator = injection;
+        protected void InjectDataCreator(Adapters.DataCreatorAbstract injection) =>
+            Dependency.DataCreator = injection;
     }
 }

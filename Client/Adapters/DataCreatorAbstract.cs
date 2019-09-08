@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.Adapters {
-    public interface INoteDisplay {
-        void DisplayNote(Entities.NoteData note);
-        void DisplayList(List<Entities.NoteData> noteList);
+    public abstract class DataCreatorAbstract {
+        public abstract bool CreateNote(string ID, string title, string body);
     }
 }

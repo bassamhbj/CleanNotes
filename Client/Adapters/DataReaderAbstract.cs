@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.Adapters {
-    public abstract class NoteReaderAbstract {
+    public abstract class DataReaderAbstract {
 
         public abstract List<Entities.NoteData> GetNoteList();
 

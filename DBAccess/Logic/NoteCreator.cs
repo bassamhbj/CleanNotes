@@ -11,9 +11,7 @@ namespace DBAccess.Logic {
 
         }
 
-        public int CreateNote(string title, string body) {
-            string ID = Guid.NewGuid().ToString();
-
+        public int CreateNote(string ID, string title, string body) {
             var sql = new Server.SQLBuilder();
             var tuple = sql.Insert(ID, title, body);
 

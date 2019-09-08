@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Core.Entities;
 
 namespace CleanNotes.View {
-    class NoteListView : Core.Adapters.INoteDisplay {
+    class NoteListView {
 
         public NoteListView() {
 
@@ -14,24 +14,15 @@ namespace CleanNotes.View {
 
         #region Methods
         public void CreateView() {
-            var client = new Core.ActionFacade();
-            client.DisplayNoteList();
+            var client = new Core.Case.DisplayNotes();
+            var notes = client.GetNoteList();
+            ProcessList(notes);
         }
 
         private void ProcessList(List<NoteData> noteList) {
             foreach (var item in noteList) {
                 Console.WriteLine($"Title: {item.Title} Body: {item.Body}");
             }
-        }
-        #endregion
-
-        #region Override Methods
-        public void DisplayList(List<NoteData> noteList) {
-            ProcessList(noteList);
-        }
-
-        public void DisplayNote(NoteData note) {
-            throw new NotImplementedException();
         }
         #endregion
     }

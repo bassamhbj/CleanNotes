@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Core.Entities;
 
 namespace DBAccess {
-    public class DataReader : Core.Adapters.NoteReaderAbstract {
+    public class DataReader : Core.Adapters.DataReaderAbstract {
 
         public override NoteData GetNoteById(string ID) {
             return new Logic.NoteReader().GetNoteById(ID);

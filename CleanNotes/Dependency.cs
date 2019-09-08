@@ -12,9 +12,8 @@ namespace CleanNotes {
         }
 
         public void AddDependencies() {
-            base.InjectNoteReader(new DBAccess.DataReader());
-            base.InjectNoteCreator(new DBAccess.DataCreator());
-            base.InjectNoteDisplay(new View.NoteListView());
+            base.InjectDataReader(new DBAccess.DataReader());
+            base.InjectDataCreator(new DBAccess.DataCreator());            
         }
     }
 }

@@ -5,13 +5,11 @@ using System.Web;
 using Core.Entities;
 
 namespace CleanNotesReact.Logic {
-    public class NoteAdapter : Core.Adapters.INoteDisplay {
+    public class NoteAdapter {
 
         public NoteAdapter() {
 
         }
-
-        public void Get
 
         #region Override Methods
         public void DisplayList(List<NoteData> noteList) {

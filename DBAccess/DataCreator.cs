@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using Core.Adapters;
 
 namespace DBAccess {
-    public class DataCreator : Core.Adapters.NoteCreatorAbstract {
+    public class DataCreator : Core.Adapters.DataCreatorAbstract {
 
-        public override ReturnCode CreateNote(string title, string body) {
+        public override bool CreateNote(string ID, string title, string body) {
             var creator = new Logic.NoteCreator();
-            int result = creator.CreateNote(title, body);
+            int result = creator.CreateNote(ID, title, body);
 
-            return result == 0 ? ReturnCode.ERROR : ReturnCode.SUCCESS;
+            return result >= 1;
         }
 
     }
